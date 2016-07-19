@@ -28,11 +28,13 @@ test-output
 
 # other scm
 .svn
-.CVS
+.sd
 .hg*
 
 # switch to regexp syntax.
 #  syntax: regexp
 #  ^\.pc/
 
+20
 
+2015-03-01-[1-9]*.json
