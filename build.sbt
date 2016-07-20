@@ -2,7 +2,7 @@ name := """spark-tutorial"""
 
 version := "1.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.10.5"
 
 lazy val spark = "1.6.0"
 
@@ -10,7 +10,7 @@ lazy val sparkTutorial = (project in file(".")).
   settings(
     name := "spark-in-action",
     version := "1.0",
-    scalaVersion := "2.11.7",
+    scalaVersion := "2.10.5",
     mainClass in Compile := Some("main.Main")
   )
 
