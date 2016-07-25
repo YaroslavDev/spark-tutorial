@@ -3,7 +3,7 @@ package com.spark.tutorial
 import SparkCommon._
 import org.apache.spark.sql.functions._
 
-object App extends App {
+object TopCommitersApp extends App {
   val paths = for {
     filename <- args
   } yield filename
