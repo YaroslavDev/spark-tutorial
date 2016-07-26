@@ -1,8 +1,8 @@
 package com.spark.tutorial
 
-import SparkCommon._
+object BearWinnerApp extends App with SparkCommon {
+  override val appName = "BearWinnerApp"
 
-object BearWinnerApp extends App {
   val tranFile = sc.textFile(args(0))
   val tranData = tranFile.map(_.split("#"))
   val transByCust = tranData.map(t => (t(2).toInt, t))

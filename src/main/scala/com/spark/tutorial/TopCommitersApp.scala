@@ -1,9 +1,10 @@
 package com.spark.tutorial
 
-import SparkCommon._
 import org.apache.spark.sql.functions._
 
-object TopCommitersApp extends App {
+object TopCommitersApp extends App with SparkCommon {
+  override val appName = "TopCommitersApp"
+
   val paths = for {
     filename <- args
   } yield filename

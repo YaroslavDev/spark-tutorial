@@ -1,11 +1,13 @@
 package com.spark.tutorial
 
-import com.spark.tutorial.SparkCommon._
-
 case class Product(id: Int, name: String, price: Float, rank: Int)
 case class Transaction(date: String, customerId: Int, productId: Int, amount: Int, discount: Float)
 
-object TransactionsApp extends App {
+object TransactionsApp extends App with SparkCommon {
+
+  override def appName = "TransactionsApp"
+
+  println(s"$appName has started...")
   val productsFile = sc.textFile(args(0))
   val transactionsFile = sc.textFile(args(1))
 
@@ -28,4 +30,5 @@ object TransactionsApp extends App {
   boughtProducts.foreach {
     case (_, (Product(prodName, _, _, _), prodTransactions: Iterable[Transaction])) => println(s"$prodName bought by ${prodTransactions.map(_.customerId).mkString(", ")}")
   }
+  println(s"$appName has finished")
 }
